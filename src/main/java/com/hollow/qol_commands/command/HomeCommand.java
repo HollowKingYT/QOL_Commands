@@ -18,7 +18,12 @@ public class HomeCommand {
 
                     if (player == null) {
                         context.getSource().sendError(Text.of("Player Null!"));
-                        return -1;
+                        return 1;
+                    }
+
+                    if (pos == null) {
+                        context.getSource().sendError(Text.of("Home not set yet!"));
+                        return 1;
                     }
 
                     Vec3d coords = returnHome(player);
@@ -46,6 +51,7 @@ public class HomeCommand {
 
     private static Vec3d setHome(ServerPlayerEntity player) {
         pos = player.getBlockPos();
+
 
         return new Vec3d(pos.getX(), pos.getY(), pos.getZ());
     }

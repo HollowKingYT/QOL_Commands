@@ -11,7 +11,7 @@ public class QOL_Commands implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Registering Commands...!");
+		LOGGER.info("Registering Commands...");
 		ModCommands.registerCommands();
 	}
 }
