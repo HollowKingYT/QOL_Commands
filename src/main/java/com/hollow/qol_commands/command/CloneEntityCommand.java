@@ -1,5 +1,6 @@
 package com.hollow.qol_commands.command;
 
+import com.hollow.qol_commands.QOL_Commands;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -18,7 +19,7 @@ import java.util.Optional;
 public class CloneEntityCommand {
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(CommandManager.literal("CloneEntity")
+        dispatcher.register(CommandManager.literal("cloneEntity")
                 .requires(source -> source.hasPermissionLevel(2)) // Require OP level 2
                 .executes(context -> {
                     ServerPlayerEntity player = context.getSource().getPlayer();
@@ -57,7 +58,8 @@ public class CloneEntityCommand {
 
             return null;
         } catch (Exception e) {
-            e.printStackTrace(); // Print error to console
+            QOL_Commands.LOGGER.info("[DEBUG] error at");
+            e.printStackTrace();
             return null;
         }
     }

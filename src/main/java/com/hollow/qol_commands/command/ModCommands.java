@@ -8,6 +8,7 @@ public class ModCommands {
     public static void registerCommands() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             CloneEntityCommand.register(dispatcher);
+            HomeCommand.register(dispatcher);
         });
     }
 }
