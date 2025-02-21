@@ -68,7 +68,7 @@ public class HomeCommand {
 
         BlockPos homePos = storage.getHome(player.getUuid());
 
-        if (homePos != null) {
+        if (storage.hasHome(player.getUuid())) {
             player.teleport(homePos.getX(), homePos.getY(), homePos.getZ(), false);
             return new Vec3d(homePos.getX(), homePos.getY(), homePos.getZ());
         } else {
